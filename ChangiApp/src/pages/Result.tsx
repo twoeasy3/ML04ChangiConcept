@@ -1,5 +1,4 @@
-import { Link , useParams} from 'react-router-dom';
-import { ChangeEvent, useState } from 'react';
+import {useParams} from 'react-router-dom';
 import ProgressBar from '../components/ProgressBar';
 import { hashCode, fetchName,fetchPlane,fetchStatus } from '../bin/HashAndGenerate';
 
