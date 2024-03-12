@@ -1,6 +1,6 @@
 import {useParams} from 'react-router-dom';
 import ProgressBar from '../components/ProgressBar';
-import { hashCode, fetchName,fetchPlane,fetchStatus,fetchBelt} from '../bin/HashAndGenerate';
+import { hashCode, fetchName,fetchPlane,fetchStatus,fetchBelt, fetchAirport} from '../bin/HashAndGenerate';
 import { DiscourageMessage, EncourageMessage, HurryMessage } from '../components/InfluenceMessage';
 
 
@@ -12,6 +12,7 @@ function Result(){
     const Plane: string = fetchPlane(Hash);
     const Status: number = fetchStatus(Hash);
     const Belt:number = fetchBelt(Hash);    
+    const Airport:string = fetchAirport(Hash);
     const StatusTexts: string[] = 
     ["On Plane", "Deplaned", "Sorting", "Security", "Final Mile", "Claim","Pick up :)"];
     const TimeRemaining: string[] = 
@@ -31,7 +32,7 @@ function Result(){
                 <h2 className="ml-2 mr-2 text-m text-black font-semibold">Baggage Info</h2>
                 <h2 className="ml-2 mr-2 text-m text-black">{Name}</h2>
                 <h2 className="ml-2 mr-2 text-m text-black">{Plane}</h2>
-                <h2 className="ml-2 mr-2 text-m text-black">LON to JAC</h2>
+                <h2 className="ml-2 mr-2 text-m text-black">{Airport} to SIN</h2>
                 <h2 className="ml-2 mr-2 text-m text-black">Checked in 1x baggage</h2>
 
             </div>

@@ -186,3 +186,10 @@ export function fetchBelt(num: number): number {
       return num%50;
   }
 }
+
+export function fetchAirport(hash:number): string{
+  const AirportCodeTable = ['ADL','AMD','AMS','AUC','BIA','BKK','BCN','PEK','BLN','BRU','BRE','PUS','CNS','CPT',
+'DOH','LON','CKG','MAA','CDG','CHC','CMB','TFU','JFK','LGW','KUL','FRA','DXB','CGK','SGN','IST','HYD','HKG',
+'IAH','LAX','KIX','MAN','PEN','PER','SYD','HKT','TPE','MEL','SFO','ICN','HND','ZRH']
+  return(AirportCodeTable[hash%AirportCodeTable.length])
+}
