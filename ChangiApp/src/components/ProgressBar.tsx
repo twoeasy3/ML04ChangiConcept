@@ -39,7 +39,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({currentStep}) => {
         <div className = "PROGRESSBARPARENT mb-5 justify-between flex w-11/12">
             {steps.map((index)=>(
                 <React.Fragment key={index}>
-                    <ProgressBarSection completed = {index < currentStep} active = {index === currentStep} isFirst = {index === 0} name = {stepNames[index]}></ProgressBarSection>
+                    <ProgressBarSection completed = {index < currentStep+1} active = {index === currentStep+1} isFirst = {index === 0} name = {stepNames[index]}></ProgressBarSection>
                 </React.Fragment>
             ))}
         </div>
