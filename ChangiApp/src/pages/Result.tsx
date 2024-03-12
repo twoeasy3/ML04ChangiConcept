@@ -1,6 +1,6 @@
 import {useParams} from 'react-router-dom';
 import ProgressBar from '../components/ProgressBar';
-import { hashCode, fetchName,fetchPlane,fetchStatus } from '../bin/HashAndGenerate';
+import { hashCode, fetchName,fetchPlane,fetchStatus,fetchBelt} from '../bin/HashAndGenerate';
 
 
 
@@ -11,6 +11,11 @@ function Result(){
     const Name: string = fetchName(Hash);
     const Plane: string = fetchPlane(Hash);
     const Status: number = fetchStatus(Hash);
+    const Belt:number = fetchBelt(Hash);
+    const StatusTexts: string[] = 
+    ["On Plane", "Deplaned", "Sorting", "Security", "Final Mile", "Claim","Pick up :)"];
+    const TimeRemaining: string[] = 
+    ['25 minutes','20 minutes','15 minutes','10 minutes','5 minutes',"Ready!","Ready!"];
 
 
     return (
@@ -23,7 +28,6 @@ function Result(){
                 <h2 className="ml-2 mr-2 text-m text-black">{Name}</h2>
                 <h2 className="ml-2 mr-2 text-m text-black">{Plane}</h2>
                 <h2 className="ml-2 mr-2 text-m text-black">LON to JAC</h2>
-                <h2 className="ml-2 mr-2 text-m text-black">Scheduled to land 1400</h2>
                 <h2 className="ml-2 mr-2 text-m text-black">Checked in 1x baggage</h2>
 
             </div>
@@ -32,13 +36,13 @@ function Result(){
                 <div className = "TEXTINFO flex flex-row justify-between">
                     <div className = "BAGGAGESTATUS">
                         <h2 className="ml-2 mr-2 mb-2 text-m text-black">Baggage Status</h2>
-                        <h2 className="ml-2 mr-2 text-xl text-black font-semibold">Deplaned</h2>
-                        <h2 className="ml-2 mr-2 mb-2 text-sm text-gray-300 font-semibold">Next: Sorting</h2>
+                        <h2 className="ml-2 mr-2 text-xl text-black font-semibold">{StatusTexts[Status]}</h2>
+                        <h2 className="ml-2 mr-2 mb-2 text-sm text-gray-300 font-semibold">Next: {StatusTexts[Status+1]}</h2>
                     </div>    
                     <div className = "ETA justify-end">
                         <h2 className="ml-2 mr-2 text-m text-black ">ETA:</h2>
-                        <h2 className="ml-2 mr-2 text-xl text-black font-semibold">15 minutes</h2>
-                        <h2 className="ml-2 mr-2 mb-2 text-sm text-black font-semibold">at Belt 57</h2>
+                        <h2 className="ml-2 mr-2 text-xl text-black font-semibold">{TimeRemaining[Status]}</h2>
+                        <h2 className="ml-2 mr-2 mb-2 text-sm text-black font-semibold">at Belt {Belt}</h2>
                     </div>
                 </div>     
                 <ProgressBar currentStep={Status} />

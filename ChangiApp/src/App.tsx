@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Result />} />
+        <Route path="/" element={<Scanner />} />
         <Route path="/Scanner" element={<Scanner />} />
         <Route path="/baggage/:Barcode" element={<Result />}/>
       </Routes>

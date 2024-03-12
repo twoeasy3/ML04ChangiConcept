@@ -20,3 +20,13 @@ export function fetchStatus(hash:number): number{
     hash = hash % 6;
     return(hash)
 }
+
+export function fetchBelt(num: number): number {
+  const numAsString = Math.abs(num).toString();
+  
+  if (numAsString.length >= 2) {
+      return parseInt(numAsString.substring(0, 2));
+  } else {
+      return num%50;
+  }
+}
