@@ -9,6 +9,7 @@ export function hashCode(str: string): number {
   }
 
 export function fetchName(hash: number): string{
+    hash = hash
     return("Will Osprey")
 }
 export function fetchPlane(hash:number): string{

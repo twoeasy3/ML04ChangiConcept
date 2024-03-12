@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { ChangeEvent, useState } from 'react';
+
 import React from 'react';
 
 
@@ -14,9 +13,10 @@ const ProgressBarSection: React.FC<ProgressBarSectionProps> = ({completed,active
     const circleSize = active ? "w-8 h-8" : "w-6 h-6";
     const circleColour = completed ? "bg-green-500" : "bg-gray-300";
     const barColour = isFirst ? "" : completed ? "flex-1 h-1 bg-green-500" : active ? "flex-1 h-1 bg-green-500" : "flex-1 h-1 bg-gray-300"
+
     return(
     
-    <div className = "PROGRESSBARSECTION justify-end flex-1 flex flex-row items-center"> 
+    <div className = {`PROGRESSBARSECTION ${name} justify-end flex-1 flex flex-row items-center`}> 
         <div className ={`BARLINE ${barColour}`}></div>    
             <div className={`flex items-center justify-center ${circleSize} rounded-full border-2 border-gray-300 ${circleColour} text-white font-bold`}>
             {completed ? "✓" : ""}
@@ -37,7 +37,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({currentStep}) => {
 
     return(
         <div className = "PROGRESSBARPARENT mb-5 justify-between flex w-11/12">
-            {steps.map((step,index)=>(
+            {steps.map((index)=>(
                 <React.Fragment key={index}>
                     <ProgressBarSection completed = {index < currentStep} active = {index === currentStep} isFirst = {index === 0} name = {stepNames[index]}></ProgressBarSection>
                 </React.Fragment>
