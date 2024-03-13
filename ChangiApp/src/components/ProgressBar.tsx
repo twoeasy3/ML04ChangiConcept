@@ -10,7 +10,7 @@ interface ProgressBarSectionProps{
 }
 
 const ProgressBarSection: React.FC<ProgressBarSectionProps> = ({completed,active,isFirst,name}) => {
-    const circleSize = active ? "w-8 h-8" : "w-6 h-6";
+    const circleSize = active ? "w-8 h-8 border-green-500 border-2" : "w-6 h-6";
     const circleColour = completed ? "bg-green-500" : "bg-gray-300";
     const barColour = isFirst ? "" : completed ? "flex-1 h-1 bg-green-500" : active ? "flex-1 h-1 bg-green-500" : "flex-1 h-1 bg-gray-300"
 

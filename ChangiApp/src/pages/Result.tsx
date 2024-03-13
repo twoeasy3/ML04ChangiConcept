@@ -25,8 +25,12 @@ function Result(){
 
     return (
         <div className="flex flex-col justify-center items-center">
-            <div className="TOPBAR w-full flex flex-col bg-[#0e8c25]">
-                <h2 className="mt-4 text-center mb-8 text-2xl text-white font-semibold">Baggage Tracker</h2>
+            <div className="TOPBAR w-full flex flex-row justify-between bg-[#0e8c25]">
+                <h2 className="mt-4 ml-3 text-center mb-8 text-2xl text-left text-white font-semibold">Baggage Tracker</h2>
+                <div className = "SCANTIME flex flex-col">
+                    <h2 className="mt-1 mr-3 text-center text-2xl text-left text-white font-semibold">{String(TimeNow.getHours()).padStart(2, '0')}:{String(TimeNow.getMinutes()).padStart(2, '0')} GMT+8   </h2>
+                    <h2 className="mr-3 text-center text-xl text-left text-white font-semibold">Scanned Time </h2>
+                </div>
             </div>
             <div className="TICKETINFO mt-5 w-fit flex flex-col border-4 border-black rounded-3xl ">
                 <h2 className="ml-2 mr-2 text-m text-black font-semibold">Baggage Info</h2>
