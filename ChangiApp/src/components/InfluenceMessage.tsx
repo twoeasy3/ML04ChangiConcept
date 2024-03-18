@@ -20,7 +20,7 @@ export const EncourageMessage: React.FC = () => {
             <h2 className="ml-2 mr-2 text-xl text-black font-semibold">Your bag is almost there!</h2>
             <h2 className="ml-2 mr-2 mb-2 text-sm text-black font-semibold text-wrap">You should start heading to the baggage claim now. We hope you had a pleasant transit at Changi Airport.</h2>
             <h2 className="ml-2 mr-2 mb-2 text-sm text-black font-semibold text-wrap">This is the directions to the belt:</h2>
-            <img className="border-[#2d44f5be]" src={`../../public/baggage_map.jpg`}></img>
+            <img className="border-[#2d44f5be]" src={`../assets/baggage_map.jpg`}></img>
         </div>
     );
 };
@@ -32,7 +32,7 @@ export const HurryMessage: React.FC = () => {
             <h2 className="ml-2 mr-2 text-xl text-black font-semibold">Your bag is waiting for you!</h2>
             <h2 className="ml-2 mr-2 mb-2 text-sm text-black font-semibold text-wrap">You should start heading to the baggage claim now. We hope you had a pleasant transit at Changi Airport.</h2>
             <h2 className="ml-2 mr-2 mb-2 text-sm text-black font-semibold text-wrap">This is the directions to the belt:</h2>
-            <img className="border-[#2d44f5be]" src={`../../public/baggage_map.jpg`}></img>
+            <img className="border-[#2d44f5be]" src={`../assets/baggage_map.jpg`}></img>
         </div>
     );
 };
