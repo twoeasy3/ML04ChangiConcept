@@ -32,10 +32,10 @@ function Result(){
                     <h2 className="mr-3 text-center text-xl text-left text-white font-semibold">Scanned Time </h2>
                 </div>
             </div>
-            <div className="TOPBAR w-full flex flex-row justify-between bg-[#FF0000]">
+            {/*<div className="TOPBAR w-full flex flex-row justify-between bg-[#FF0000]">
                 <h2 className="mt-4 ml-5 text-center mb-8 text-2xl text-left text-white font-semibold">Inclement Weather Alert</h2>
                 <h2 className="mt-4 mr-5 text-center mb-8 text-2xl text-left text-white font-semibold">Your baggage will be delayed</h2>
-            </div>
+    </div>*/}
             <div className="TICKETINFO mt-5 w-fit flex flex-col border-4 border-black rounded-3xl ">
                 <h2 className="ml-2 mr-2 text-m text-black font-semibold">Baggage Info</h2>
                 <h2 className="ml-2 mr-2 text-m text-black">{Name}</h2>
