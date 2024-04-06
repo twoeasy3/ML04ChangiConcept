@@ -1,22 +1,12 @@
 import {useParams} from 'react-router-dom';
-import ProgressBar from '../components/ProgressBar';
-import { hashCode, fetchName,fetchPlane,fetchStatus,fetchBelt, fetchAirport} from '../bin/HashAndGenerate';
-import { DiscourageMessage, EncourageMessage, HurryMessage } from '../components/InfluenceMessage';
+import { hashCode,fetchStatus} from '../bin/HashAndGenerate';
 
 
 function BaggageClaim(){
     const Barcode: string = JSON.stringify(useParams());
     console.log(Barcode);
     const Hash: any = hashCode(Barcode);
-    const Name: string = fetchName(Hash);
-    const Plane: string = fetchPlane(Hash);
     const Status: number = fetchStatus(Hash);
-    const Belt:number = fetchBelt(Hash);    
-    const Airport:string = fetchAirport(Hash);
-    const StatusTexts: string[] = 
-    ["On Plane", "Deplaned", "Sorting", "Security", "Final Mile", "Claim","Pick up :)"];
-    const TimeRemaining: string[] = 
-    ['25 minutes','20 minutes','15 minutes','10 minutes','5 minutes',"Ready!","Ready!"];
     const TimeNumber: number[] = 
     [25,20,15,10,5,0,0];
     const ReadyTime: Date = new Date()

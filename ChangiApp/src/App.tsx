@@ -8,6 +8,7 @@ import Result from './pages/Result.tsx';
 
 // @ts-ignore
 import Scanner from './pages/Scanner.jsx';
+// @ts-ignore
 import ScannerClaim from './pages/ScannerClaim.jsx';
 import BaggageClaim from './pages/BaggageClaim.tsx';
 
